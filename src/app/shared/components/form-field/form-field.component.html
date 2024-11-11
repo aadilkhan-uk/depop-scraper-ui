@@ -1,0 +1,18 @@
+<div class="form-field">
+  <label [class.required]="required">
+    {{ label }}
+  </label>
+
+  <input
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="onInput($event)"
+    (blur)="markAsTouched()"
+  />
+
+  <span class="error" *ngIf="error && touched">
+    {{ error }}
+  </span>
+</div>
